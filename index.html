@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xxx's Homepage</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+
+    a { color: #2b6cb0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== 顶部导航栏 ===== */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 0 24px;
+    }
+    nav .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    nav .site-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #222;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul a { color: #555; font-size: 15px; }
+    nav ul a:hover { color: #2b6cb0; text-decoration: none; }
+    nav ul a.active { color: #2b6cb0; }
+
+    /* ===== 主体 ===== */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* 简介区：头像 + 基本信息 */
+    .profile {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .profile img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .profile-info h1 {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+    .profile-info p { color: #444; }
+    .profile-info .links {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    .profile-info .links a { margin-right: 16px; }
+
+    section { margin-top: 40px; }
+    section h2 {
+      font-size: 22px;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    section p { margin-bottom: 10px; }
+
+    /* 关键词标签 */
+    .keywords { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .keywords li {
+      background: #f0f4f8;
+      color: #2b6cb0;
+      border-radius: 14px;
+      padding: 3px 12px;
+      font-size: 14px;
+    }
+
+    /* News 列表 */
+    .news { list-style: none; }
+    .news li { margin-bottom: 8px; }
+    .news .date { color: #888; font-family: monospace; margin-right: 8px; }
+
+    /* 论文/经历条目 */
+    .item { margin-bottom: 18px; }
+    .item .title { font-weight: bold; }
+    .item .meta { color: #555; font-size: 15px; }
+    .item .note { color: #777; font-size: 15px; font-style: italic; }
+
+    /* 经历时间轴 */
+    .exp { list-style: none; }
+    .exp li { margin-bottom: 14px; }
+    .exp .years { color: #888; font-family: monospace; margin-right: 8px; }
+
+    /* 页脚 */
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 20px 24px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* 手机适配 */
+    @media (max-width: 640px) {
+      .profile { flex-direction: column; }
+      nav .nav-inner { flex-direction: column; height: auto; padding: 10px 0; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="site-title">xxx's Homepage</span>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== 简介区 ===== -->
+  <div class="profile">
+    <img src="assets/avatar.jpg" alt="xxx" onerror="this.style.display='none'">
+    <div class="profile-info">
+      <h1>xxx</h1>
+      <p>xxx（职位，如：Postdoctoral Researcher in xxx）</p>
+      <p>xxx University, xxx City</p>
+      <div class="links">
+        <a href="mailto:xxx@example.com">Email</a>
+        <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+        <a href="assets/cv.pdf" target="_blank">CV</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== About me ===== -->
+  <section id="about">
+    <h2>About me</h2>
+    <p>xxx。这里是第一段个人简介，介绍你目前的身份、所在单位、合作导师等，例如：I am a xxx at xxx University, working with Prof. xxx.</p>
+    <p>xxx。这里是第二段，介绍教育背景，例如：I received my Ph.D. degree in xxx from xxx University in 20xx, and my B.S. degree in xxx from xxx University in 20xx.</p>
+    <p>xxx。这里是第三段，可以写研究方向概述或个人爱好、联系方式等。</p>
+  </section>
+
+  <!-- ===== Research ===== -->
+  <section id="research">
+    <h2>Research</h2>
+    <p>xxx。这里用一段话概括你的研究主题，例如：My research centers on xxx methods in xxx, with a focus on xxx.</p>
+    <h2 style="margin-top:24px; font-size:18px;">Keywords</h2>
+    <ul class="keywords">
+      <li>xxx</li>
+      <li>xxx</li>
+      <li>xxx</li>
+      <li>xxx</li>
+      <li>xxx</li>
+    </ul>
+  </section>
+
+  <!-- ===== News ===== -->
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">20xx-xx</span> xxx</li>
+      <li><span class="date">20xx-xx</span> xxx</li>
+      <li><span class="date">20xx-xx</span> xxx</li>
+    </ul>
+  </section>
+
+  <!-- ===== Publications ===== -->
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <div class="item">
+      <div class="title">xxx</div>
+      <div class="meta">xxx, xxx</div>
+      <div class="note">xxx（期刊/会议名，卷期页码）</div>
+    </div>
+
+    <div class="item">
+      <div class="title">xxx</div>
+      <div class="meta">xxx, xxx</div>
+      <div class="note">xxx</div>
+    </div>
+
+    <div class="item">
+      <div class="title">xxx</div>
+      <div class="meta">xxx, xxx</div>
+      <div class="note">xxx</div>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="exp">
+      <li><span class="years">20xx–</span>xxx（职位）, xxx University</li>
+      <li><span class="years">20xx–20xx</span>xxx（学位/职位）, xxx University</li>
+      <li><span class="years">20xx–20xx</span>xxx（学位/职位）, xxx University</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 20xx xxx &middot; Last updated: xxx &middot; Powered by GitHub Pages
+</footer>
+
+</body>
+</html>
